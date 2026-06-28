@@ -1,0 +1,121 @@
+import type { Game, Stats } from "@/types";
+
+export const GAMES: Game[] = [
+  {
+    id: "spaceship",
+    name: "Spaceship",
+    description: "Real-time crash game with USDC payouts on Base & Celo",
+    longDescription:
+      "Ride the spaceship as long as you dare. Cash out before it crashes and multiply your USDC. Provably fair with on-chain verification.",
+    status: "live",
+    url: process.env.NEXT_PUBLIC_SPACESHIP_URL || "https://spaceship.chipsonchips.com",
+    icon: "rocket",
+    emoji: "🚀",
+    color: "#6366f1",
+    features: ["USDC Betting", "Gasless Transactions", "Live Multiplayer", "Farcaster Integration"],
+    players: 1240,
+    tags: ["crash", "multiplayer", "web3"],
+    isFeatured: true,
+    isNew: false,
+  },
+  {
+    id: "ludo",
+    name: "Ludo",
+    description: "Multiplayer Ludo with voice chat, ranked play & tournaments",
+    longDescription:
+      "The classic board game reimagined for Web3. Play ranked matches, join tournaments, and beat players globally.",
+    status: "development",
+    icon: "grid",
+    emoji: "🎲",
+    color: "#10b981",
+    features: ["Public Rooms", "Voice Chat", "Ranked Mode", "Tournament Mode"],
+    tags: ["board", "multiplayer", "social"],
+    isFeatured: true,
+  },
+  {
+    id: "spin-extreme",
+    name: "Spin Extreme",
+    description: "Prize wheel with on-chain randomness & jackpot prizes",
+    longDescription:
+      "Spin the wheel and win. Token-based spins with on-chain randomness ensure every result is provably fair.",
+    status: "development",
+    icon: "circle",
+    emoji: "🎯",
+    color: "#f59e0b",
+    features: ["On-chain Randomness", "Daily Rewards", "Jackpot Prizes", "Multiplayer Events"],
+    tags: ["spin", "luck", "web3"],
+    isFeatured: true,
+  },
+  {
+    id: "dice",
+    name: "Dice",
+    description: "Provably fair dice with instant payouts & leaderboards",
+    longDescription:
+      "Bet high or low and multiply your stake. Simple mechanics, massive potential.",
+    status: "planned",
+    icon: "hash",
+    emoji: "🎲",
+    color: "#8b5cf6",
+    features: ["Instant Betting", "Live Stats", "Leaderboards", "Custom Odds"],
+    tags: ["dice", "fast", "web3"],
+  },
+  {
+    id: "blackjack",
+    name: "Blackjack",
+    description: "Classic 21 with live dealers and USDC wagering",
+    longDescription: "Beat the dealer to 21. Classic rules, Web3 payouts.",
+    status: "coming_soon",
+    icon: "diamond",
+    emoji: "🃏",
+    color: "#ef4444",
+    features: ["Live Dealer", "Side Bets", "Multi-hand", "USDC Wagering"],
+    tags: ["cards", "classic", "skill"],
+  },
+  {
+    id: "poker",
+    name: "Poker",
+    description: "Texas Hold'em with tournament structure & prize pools",
+    longDescription: "The world's favorite card game, on-chain and provably fair.",
+    status: "coming_soon",
+    icon: "spade",
+    emoji: "♠️",
+    color: "#ec4899",
+    features: ["Texas Hold'em", "Tournament Mode", "Side Pots", "Prize Pools"],
+    tags: ["cards", "skill", "tournament"],
+  },
+  {
+    id: "slots",
+    name: "Slots",
+    description: "Themed slot machines with bonus rounds & jackpots",
+    longDescription: "Spin the reels and hit the jackpot. Multiple themes, massive multipliers.",
+    status: "coming_soon",
+    icon: "zap",
+    emoji: "🎰",
+    color: "#f97316",
+    features: ["Multiple Themes", "Bonus Rounds", "Progressive Jackpots", "Free Spins"],
+    tags: ["slots", "luck", "jackpot"],
+  },
+  {
+    id: "roulette",
+    name: "Roulette",
+    description: "European roulette with live statistics & hot numbers",
+    longDescription: "Place your bets on the wheel. European rules, real-time stats.",
+    status: "coming_soon",
+    icon: "refresh-cw",
+    emoji: "🎡",
+    color: "#06b6d4",
+    features: ["European Rules", "Live Statistics", "Hot Numbers", "Multiple Bet Types"],
+    tags: ["roulette", "classic", "live"],
+  },
+];
+
+export const PLATFORM_STATS: Stats = {
+  totalPlayers: "24,000+",
+  totalGames: "8",
+  totalPayout: "$1.2M+",
+  activeNow: "1,240",
+};
+
+export const FEATURED_GAMES = GAMES.filter((g) => g.isFeatured);
+export const LIVE_GAMES = GAMES.filter((g) => g.status === "live");
+export const getGameById = (id: string) => GAMES.find((g) => g.id === id);
