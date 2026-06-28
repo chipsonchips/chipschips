@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Wallet, ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -21,9 +22,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center glow-gold-sm transition-all group-hover:scale-105">
-              <span className="text-black font-black text-sm font-orbitron">C</span>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="ChipsOnChips"
+              width={36}
+              height={36}
+              className="transition-transform group-hover:scale-105"
+            />
             <span className="font-orbitron font-black text-lg tracking-wider">
               <span className="text-white">CHIPS</span>
               <span className="text-amber-500">ON</span>
