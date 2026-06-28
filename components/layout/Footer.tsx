@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, MessageCircle, Github, Send } from "lucide-react";
 
 const LINKS = {
@@ -43,9 +44,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center">
-                <span className="text-black font-black text-xs font-orbitron">C</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="ChipsOnChips"
+                width={30}
+                height={30}
+              />
               <span className="font-orbitron font-black text-base tracking-wider">
                 <span className="text-white">CHIPS</span>
                 <span className="text-amber-500">ON</span>
