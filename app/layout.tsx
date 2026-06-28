@@ -18,10 +18,18 @@ export const metadata: Metadata = {
   description:
     "Play premium casino games, compete in tournaments, and win real rewards. One account. One wallet. Every game.",
   keywords: ["casino", "web3", "gaming", "blockchain", "USDC", "Base", "Farcaster"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "ChipsOnChips",
     description: "The Home of Premium Web3 Gaming",
     type: "website",
+    images: [{ url: "/logo.png" }],
   },
 };
 
